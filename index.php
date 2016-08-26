@@ -15,7 +15,9 @@
 		<link rel="stylesheet" href="custom.css">
 	</head>
 	<body>
-		<h1 class="text-xs-center">Hello World</h1>
+		<center>
+		<h1 class="text-xs-center">Register</h1>
+		</center>
 		<div class="form-login">
 			<form action="proses_daftar.php" method="POST">
 				<div class="form-group">

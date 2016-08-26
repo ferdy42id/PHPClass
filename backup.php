@@ -1,5 +1,5 @@
-<?php
-	require_once('Database.php');
+<?php 
+require_once("Database.php");
 
 	class User{
 		public $id;
@@ -8,11 +8,10 @@
 		public $password;
 		public $konek;
 
-		function user(){
-			$this->konek = new Database();
-			$this->konek->konek;
+		function User($konek){
+			$konek=new Database();
 		}
-
+		
 		function setId($id){
 			$this->id = $id;
 		}
@@ -30,19 +29,19 @@
 		}
 
 		function getId(){
-			return $id;
+			return $this->id;
 		}
 
 		function getEmail(){
-			return $email;
+			return $this->email;
 		}
 
 		function getUsername(){
-			return $username;
+			return $this->username;
 		}
 
 		function getPassword(){
-			return $password;
+			return $this->password;
 		}
 
 		function showData(){
@@ -53,7 +52,7 @@
 		}
 
 		function insert(){
-			$save = mysqli_query($this->konek->konek, "INSERT INTO user(email, username, password) VALUES('$this->email', '$this->username', '$this->password)");
+			$save = mysqli_query($this->konek, "INSERT INTO 'user' ('email', 'username', 'password') VALUES('$this->username','$this->password', '$this->email')");
 		}
 	}
 ?>

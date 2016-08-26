@@ -1,16 +1,22 @@
 <?php
-
 	class Database{
-		
+		public $host;
+		public $user;
+		public $pass;
+		public $db;
+		public $konek;
+
 		function __construct(){
 
-			$host = 'localhost';
-			$user = 'root';
-			$pass = '';
-			$db = 'projectprakrin';
-			$konek = mysqli_connect($host, $user, $pass, $db) or die ('Tidak terkoneksi');
-			
-			return $konek;
+			$this->host = 'localhost';
+			$this->user = 'root';
+			$this->pass = '';
+			$this->db = 'projectprakrin';
+			$this->konek = mysqli_connect( $this->host, $this->user, $this->pass, $this->db) or die ('Error');
+
+			return $this->konek;
+
 		}
+
 	}
 ?>

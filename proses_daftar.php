@@ -1,3 +1,8 @@
+		<!-- Bootstrap CSS -->
+<html>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="custom.css">
+</html>
 <?php
 
 	require_once('Database.php');
@@ -7,19 +12,19 @@
 	$password = $_POST['password'];
 	$submit = $_POST['submit'];
 	$konek = new Database();
+	$user = new User();
 
 	if($submit){
-		$user = new User($konek);
 		$user->setEmail($email);
 		$user->setUsername($username);
 		$user->setPassword($password);
 		if($user->insert()){
-			echo "sukses";
-			echo "<a href=\"index.php\"><button type class=\"btn btn-default\">back</button></a>";
+			echo "sukses<br>";
+			echo "<a href=\"index.php\"><button type class=\"btn btn-danger\">back</button></a>";
 		}
 		else{
-			echo "gagal";
-			echo "<a href=\"index.php\"><button type class=\"btn btn-default\">back</button></a>";
+			echo "gagal<br>";
+			echo "<a href=\"index.php\"><button type class=\"btn btn-danger\">back</button></a>";
 		}
 	}
 ?>
